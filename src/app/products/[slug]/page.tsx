@@ -1,6 +1,8 @@
 import { getProduct, getProducts, Product } from "@/src/service/products";
 import { notFound } from "next/navigation";
 
+export const revalidate = 3;
+
 type Props = { params: { slug: string } };
 
 // generate metadata for SEO
@@ -15,7 +17,6 @@ export async function generateMetadata({ params }: Props) {
 // dynamic route 페이지
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  console.log(slug);
 
   const product = await getProduct(slug);
   if (!product) {
