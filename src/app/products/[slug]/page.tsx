@@ -1,5 +1,7 @@
 import { getProduct, getProducts, Product } from "@/src/service/products";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import path from "node:path";
 
 export const revalidate = 3;
 
@@ -22,7 +24,18 @@ export default async function ProductPage({ params }: Props) {
   if (!product) {
     notFound();
   }
-  return <h1> {product.name} detail page</h1>;
+
+  return (
+    <>
+      <h1> {product.name} detail page</h1>
+      <Image
+        src={`/images/${product.img}`}
+        alt={product.name}
+        width={400}
+        height={400}
+      />
+    </>
+  );
 }
 
 // SSG

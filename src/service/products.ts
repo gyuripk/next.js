@@ -6,7 +6,7 @@ import path from "node:path";
 import process from "node:process";
 
 // 다른 곳에서도 이 타입 사용가능하게 export하기
-export type Product = { id: string; name: string; price: number };
+export type Product = { id: string; name: string; price: number; img: string };
 
 // data 얻어오는 APIs
 export async function getProducts(): Promise<Product[]> {

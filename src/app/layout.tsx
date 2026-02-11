@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
+import { Nanum_Gothic } from "next/font/google";
 import Link from "next/link";
 import styles from "./layout.module.css"; //post css로 작성한 css module
+
+const inter = Inter({ subsets: ["latin"] });
+const sans = Open_Sans({ subsets: ["latin"] });
+const gothic = Nanum_Gothic({
+  weight: "700", // variable font아니라서 두께 설정해줘야함
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,12 +37,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={sans.className}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className={styles.header}>
-          <h1>Demo Note</h1>
+          <h1 className={gothic.className}>Demo Note</h1>
           <nav className={styles.nav}>
             <Link href="/">Home</Link>
             <Link href="/products">Products</Link>
