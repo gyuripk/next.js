@@ -23,8 +23,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/items/:slug",
-        destination: "/products/:slug",
+        source: "/items/:slug", // 외부에서 사용하는 url
+        destination: "/products/:slug", // 실제 동작하는 url
       },
     ];
   },

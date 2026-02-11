@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>홈페이지야!!</h1>
+      <h1>홈페이지 버전3</h1>
       {/*  필요한 부분만 client component로 만들어 사용 */}
       <Counter />
       <Image
